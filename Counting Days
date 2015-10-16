@@ -1,0 +1,14 @@
+name = raw_input("Enter file:")
+if len(name) < 1 : name = "mbox-short.txt"
+handle = open(name)
+
+
+h = dict()
+
+for line in handle:
+    if line.startswith("From "):
+        hourValue = line.split()[5].split(":")[0]
+        h[hourValue] = h.get(hourValue, 0) + 1
+
+for hour,value in sorted(h.items()):
+    print hour, value
