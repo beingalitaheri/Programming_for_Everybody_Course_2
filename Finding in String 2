@@ -1,0 +1,7 @@
+text = "X-DSPAM-Confidence:    0.8475";
+
+x = 0.8475
+
+y = text.find(str(x))
+
+print float(text[y:])
